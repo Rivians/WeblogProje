@@ -42,7 +42,6 @@
                                                 <i class="far fa-comment"></i> 0 Yorum
                                             </a>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -83,9 +82,11 @@
 
                         @await Component.InvokeAsync("CategoryList")
 
+                        @*@await Component.InvokeAsync("WriterLastBlog")*@                       @*?????????????????????????????????????*@
+
+
                         <div class="tech-btm">
                             <h4>Yazarın Diğer Blogları</h4>
-
                             <div class="blog-grids row mb-3">
                                 <div class="col-md-5 blog-grid-left">
                                     <a href="single.html">
@@ -93,7 +94,6 @@
                                     </a>
                                 </div>
                                 <div class="col-md-7 blog-grid-right">
-
                                     <h5>
                                         <a href="single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
                                     </h5>
@@ -103,7 +103,6 @@
                                         </span>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="blog-grids row mb-3">
                                 <div class="col-md-5 blog-grid-left">
@@ -121,9 +120,9 @@
                                         </span>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
+                    
                         <div class="single-gd my-5 tech-btm">
                             <h4>Our Progress</h4>
                             <div class="progress">
