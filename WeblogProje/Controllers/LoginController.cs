@@ -31,7 +31,7 @@ namespace WeblogProje.Controllers
 				var userIdentity = new ClaimsIdentity(claims,"a");   // buraya nede a parametresi girdik ?
 				ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
 				await HttpContext.SignInAsync(principal);
-				return RedirectToAction("Index", "Writer");
+				return RedirectToAction("Index", "Blog");
 			}
 			else
 			{
@@ -49,7 +49,6 @@ namespace WeblogProje.Controllers
 			//	{
 			//		return View();
 			//	}
-
 		}
 	}
 }
