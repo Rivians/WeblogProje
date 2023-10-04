@@ -9,7 +9,8 @@ namespace WeblogProje.Controllers
 		CategoryManager cm = new CategoryManager(new EfCategoryRepository());
 		public IActionResult Index()
 		{
-			return View();
+			var values = cm.GetList();
+			return View(values);
 		}
 	}
 }
