@@ -62,5 +62,26 @@ namespace WeblogProje.Controllers
 			}
 			return View();
 		}
+
+		public IActionResult BlogDelete(int id)
+		{
+			var value = bm.TGetByID(id);
+			bm.TDelete(value);
+			return RedirectToAction("BlogListByWriter");
+		}
+
+		[HttpGet]
+		public IActionResult BlogEdit(int id)
+		{
+			var values = bm.TGetByID(id);
+			return View(values);
+		}
+
+		[HttpPost]
+		public IActionResult BlogEdit(Blog b)
+		{
+			bm.TUpdate(b);
+			return RedirectToAction("BlogListByWriter");
+		}
 	}
 }

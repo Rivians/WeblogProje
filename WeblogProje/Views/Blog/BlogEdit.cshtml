@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Blog
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Bloğu Güncelle</h1>
+<br />
+
+<form asp-controller="Blog" asp-action="BlogEdit" method="post">
+    <label>Blog ID</label>
+    <input type="text" class="form-control" asp-for="BlogID" style="width:600px" readonly />
+    <br /><br />
+
+    <label>Yazar ID</label>
+    <input type="text" class="form-control" asp-for="WriterID" style="width:600px" readonly />
+    <br /><br />
+
+    <label>Blog Başlığı</label>
+    <input type="text" class="form-control" asp-for="BlogTitle" style="width:600px" />
+    <br /><br />
+
+    <label>Blog İçeriği</label>
+    <input type="text" class="form-control" asp-for="BlogContent" style="width:600px" />
+    <br /><br />
+
+    <label>Blog Thumbnail</label>
+    <input type="text" class="form-control" asp-for="BlogThumbnailImage" style="width:600px" />
+    <br /><br />
+
+    <label>Blog Görseli</label>
+    <input type="text" class="form-control" asp-for="BlogImage" style="width:600px" />
+    <br /><br />
+
+    <label>Blog Durumu</label>
+    <input type="text" class="form-control" asp-for="BlogStatus" style="width:600px" />
+    <br /><br />
+
+    <label>Kategori Türü (ID)</label>
+    <input type="text" class="form-control" asp-for="CategoryID" style="width:600px" />
+    <br /><br />
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+
+
