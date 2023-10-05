@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
+	
 	public class BlogManager : IBlogService
 	{
 		IBlogDal _blogDal;
+		Context c = new Context();
 
 		public BlogManager(IBlogDal blogDal)
 		{
@@ -49,17 +52,27 @@ namespace BusinessLayer.Concrete
 
 		public void TAdd(Blog t)
 		{
-			throw new NotImplementedException();
+			_blogDal.Insert(t);
 		}
 
 		public void TDelete(Blog t)
 		{
-			throw new NotImplementedException();
+			_blogDal.Delete(t);
 		}
 
 		public void TUpdate(Blog t)
 		{
-			throw new NotImplementedException();
+			_blogDal.Update(t);
 		}
+
+		public List<Blog>GetListWithCategoryByWriter(int id)
+		{
+			return _blogDal.GetListWithCategoryByWriter(id);
+		}
+
+		//public int GetCommentCountByBlogBm(int id)
+		//{
+		//	return _blogDal.GetCommentCountByBlog(id);
+		//}
 	}
 }

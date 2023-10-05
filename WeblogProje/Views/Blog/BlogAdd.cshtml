@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Blog
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Yeni Blog Ekle</h1>
+<br />
+
+
+<form asp-controller="Blog" asp-action="BlogAdd" method="post">
+    <label>Blog Başlığı</label>
+    <input asp-for="BlogTitle" class="form-control" style="width:600px" />
+    <span asp-validation-for="BlogTitle" style="color:red"></span>
+    @*@Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })*@
+    <br />
+    <br />
+    <label>Blog Görseli</label>
+    <input asp-for="BlogImage" class="form-control" style="width:600px" />
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <label>Blog Küçük Görsel</label>
+    <input asp-for="BlogThumbnailImage" class="form-control" style="width:600px" />
+    @Html.ValidationMessageFor(x => x.BlogThumbnailImage, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <label>Blog Kategorisi</label>
+    <input asp-for="CategoryID" class="form-control" style="width:600px" />
+    @Html.ValidationMessageFor(x => x.CategoryID, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <label>Blog İçeriği</label>
+    <input asp-for="BlogContent" class="form-control" style="width:600px" />
+    @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>
+

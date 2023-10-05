@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
 	public interface ICommentDal : IGenericDal<Comment>
 	{
+		int GetCommentCountByBlog(int id);
 	}
 }
