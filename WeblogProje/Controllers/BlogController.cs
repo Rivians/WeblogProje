@@ -80,8 +80,21 @@ namespace WeblogProje.Controllers
 		[HttpPost]
 		public IActionResult BlogEdit(Blog b)
 		{
-			bm.TUpdate(b);
-			return RedirectToAction("BlogListByWriter");
+			BlogValidator bv = new BlogValidator();
+			ValidationResult result = bv.Validate(b);
+			if (result.IsValid)
+			{
+				bm.TUpdate(b);
+				return RedirectToAction("BlogListByWriter");
+			}
+			else
+			{
+				foreach (var item in result.Errors)
+				{
+					ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+				}
+			}
+			return View();
 		}
 	}
 }

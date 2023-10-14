@@ -20,18 +20,22 @@
 
     <label>Blog Başlığı</label>
     <input type="text" class="form-control" asp-for="BlogTitle" style="width:600px" />
+    <span asp-validation-for="BlogTitle" class="text-danger"></span>
     <br /><br />
 
     <label>Blog İçeriği</label>
     <input type="text" class="form-control" asp-for="BlogContent" style="width:600px" />
+    <span asp-validation-for="BlogContent" class="text-danger"></span>
     <br /><br />
 
     <label>Blog Thumbnail</label>
     <input type="text" class="form-control" asp-for="BlogThumbnailImage" style="width:600px" />
+    <span asp-validation-for="BlogThumbnailImage" class="text-danger"></span>
     <br /><br />
 
     <label>Blog Görseli</label>
     <input type="text" class="form-control" asp-for="BlogImage" style="width:600px" />
+    <span asp-validation-for="BlogImage" class="text-danger"></span>
     <br /><br />
 
     <label>Blog Durumu</label>
@@ -40,7 +44,9 @@
 
     <label>Kategori Türü (ID)</label>
     <input type="text" class="form-control" asp-for="CategoryID" style="width:600px" />
+    <span asp-validation-for="CategoryID" class="text-danger"></span>
     <br /><br />
+
     <button class="btn btn-primary">Güncelle</button>
 </form>
 
